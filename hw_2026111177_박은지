@@ -2,5 +2,33 @@
 
 이 저장소는 파이썬 프로그래밍 수업을 위한 GitHub 저장소입니다.
 
-Exercise 1 (Types) : Your First Program
+# Exercise 1 (Types) : Your First Program
 print("Hello, world!")
+#Hello, world!
+print("Hello, world!") # Print the traditional hello world
+#Hello, world!
+
+# Exercise 2 (Types): Get the object type
+type(12.0)
+#float
+
+# Exercise 3 (Types): Types
+What is the data type of the result of: 6 / 2
+type(6/2) 
+#float
+What is the type of the result of: 6 // 2?
+type(6//2) 
+#int
+
+# Exercise 4 (Types): Expression
+Let's write an expression that calculates how many hours there are in 160 minutes:
+160//60 
+#2
+
+Exercise 5 (Types): Expression and Variables in Python
+What is the value of x where x = 3 + 2 * 2
+#7
+What is the value of y where y = (3 + 2) * 2?
+#10
+What is the value of z where z = x + y?
+#17
