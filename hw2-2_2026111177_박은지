@@ -1,4 +1,4 @@
-
+# Exercise 2 (Strings)
 
 A = "1"
 #"1"
@@ -9,10 +9,12 @@ B = "2"
 C = A + B
 #"12"
 
+Consider the variable D use slicing to print out the first three elements:
 D = "ABCDEFG"
 print(D[0:3])
 #ABC
 
+Use a stride value of 2 to print out every second character of the string E:
 E = 'clocrkr1e1c1t'
 print(E[::2])
 #correct
