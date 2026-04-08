@@ -1,0 +1,125 @@
+# Exercise 4 (Lists)
+
+L = ["Michael Jackson", 10.1, 1982] #[] : indexing
+L
+#['Michael Jackson', 10.1, 1982]
+
+type(L[2])
+#int
+
+print('the same element using negative and positive indexing:\n Postive:',L[0],
+'\n Negative:' , L[-3]  )
+print('the same element using negative and positive indexing:\n Postive:',L[1],
+'\n Negative:' , L[-2]  )
+print('the same element using negative and positive indexing:\n Postive:',L[2],
+'\n Negative:' , L[-1]  )
+#the same element using negative and positive indexing:
+ Postive: Michael Jackson 
+ Negative: Michael Jackson
+ the same element using negative and positive indexing:
+ Postive: 10.1 
+ Negative: 10.1
+ the same element using negative and positive indexing:
+ Postive: 1982 
+ Negative: 1982
+
+L1 = ["Michael Jackson", 10.1, 1982, [1, 2], ("A", 1)]
+print("before L1[0] changed", L1)
+L1[0] = "Janet"
+print("after L1[0] changed", L1)
+#before L1[0] changed ['Michael Jackson', 10.1, 1982, [1, 2], ('A', 1)]
+ after L1[0] changed ['Janet', 10.1, 1982, [1, 2], ('A', 1)]
+*리스트는 변경 가능하다 mutable
+
+Tuple1=("Michael Jackson", 10.1, 1982)
+Tuple1
+Tuple1[0]="Janet"
+#TypeError
+*튜플은 변경 불가하다 immutable
+
+L = ["Michael Jackson", 10.1,1982,"MJ",1]
+L
+#['Michael Jackson', 10.1, 1982, 'MJ', 1]
+
+L[3:5]
+#['MJ', 1]
+
+L = [ "Michael Jackson", 10.2]
+L.extend(['pop', 10]) #['pop', 10] --> list 
+L[3]
+#10
+
+L = [ "Michael Jackson", 10.2]
+L.append(['pop', 10]) #['pop', 10]
+L[2][0]
+#'pop'
+*리스트 전체가 하나의 요소가 됨
+
+A = ['Michael Jackson', 10.2, 'pop', 10, ['a', 'b']]
+print('Before change:', A)
+del(A[0])
+print('After change:', A)
+#Before change: ['Michael Jackson', 10.2, 'pop', 10, ['a', 'b']]
+ After change: [10.2, 'pop', 10, ['a', 'b']]
+
+what='hard rock'.split()
+print(what)
+type(what)
+what[1]
+#['hard', 'rock']
+ rock
+
+Split_string_comma='A,B,C,D'.split(',')
+Split_string_comma
+type(Split_string_comma)
+Split_string_comma[0]
+#A
+
+A = ["hard rock", 10, 1.2]
+B = A 
+A[0] = "R&B"
+print('A:', A) #R&B, 10, 1.2
+print('B:', B) #'hard rock, 10, 1.2
+#A: ['R&B', 10, 1.2]
+ B: ['R&B', 10, 1.2]
+
+print('B[0]:', B[0])
+A[0] = "banana"
+print('B[0]:', B[0])
+#B[0]: R&B
+ B[0]: banana
+
+A = ["hard rock", 10, 1.2]
+B = A[:] #A[:]
+print(A)
+print(B)
+A[0] ='R&B'
+print(A)
+print(B)
+#['hard rock', 10, 1.2]
+ ['hard rock', 10, 1.2]
+ ['R&B', 10, 1.2]
+ ['hard rock', 10, 1.2]
+*A[:]는 복사 → 서로 영향 없음
+ B = A는 연결 → 같이 바뀜
+
+Quiz on List
+
+Create a list a_list, with the following elements 1, hello, [1,2,3] and True.
+a_list = [1, 'hello', [1, 2, 3] , True]
+a_list
+#[1, 'hello', [1, 2, 3], True]
+
+Find the value stored at index 1 of a_list.
+a_list[1]
+#hello
+
+Retrieve the elements stored at index 1, 2 and 3 of a_list.
+a_list[1:4]
+#['hello', [1, 2, 3], True]
+
+Concatenate the following lists A = [1, 'a'] and B = [2, 1, 'd']:
+A = [1, 'a'] 
+B = [2, 1, 'd']
+A + B
+#[1, 'a', 2, 1, 'd']
