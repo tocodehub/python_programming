@@ -1,0 +1,110 @@
+Exercise 6 (Conditions)
+
+a = 5
+a == 6
+#False
+i = 6
+i > 7
+#False
+i = 2
+i > 5
+#False
+i = 2
+i != 2
+#False
+i = 6
+i != 6
+#False
+
+"ACDC" == "Michael Jackson"
+#False
+"ACDC" != "Michael Jackson"
+#True
+
+age = 17
+if age > 18:
+  print("you can enter" )
+else:
+  print("Prohibited")  
+  print("okay")
+#Prohibited
+okay
+
+age = 18
+if age > 18:
+  print("you can enter" )
+else:
+  print("go see Meat Loaf" )
+    
+print("move on")
+#go see Meat Loaf
+move on
+
+age = 17
+
+if age > 18:
+    print("you can enter" )
+elif age == 18: #else if 
+    print("go see Pink Floyd")
+elif age == 0:
+    print("this kid cannot leave home") 
+else:
+    print("go see Meat Loaf" )
+#go see Meat Loaf
+
+album_year = 1983
+
+if album_year > 1980:
+    print("Album year is greater than 1980")
+#Album year is greater than 1980
+
+album_year = 1983
+
+if album_year > 1980:
+    print("Album year is greater than 1980")
+else:
+    print("less than 1980")
+
+print('do something..')
+#Album year is greater than 1980
+do something..
+
+album_year = 1991
+
+if(album_year > 1979) and (album_year < 1990):
+    print ("Album year was in between 1980 and 1989")   
+else:
+    print("this is not the case")
+#this is not the case
+
+album_year = 1980
+
+if(album_year < 1980) or (album_year > 1989):
+    print ("Album was not made in the 1980's")
+else:
+    print("The Album was made in the 1980's ")
+#The Album was made in the 1980's 
+
+album_year = 1983
+if not (album_year == '1984'):
+    print ("Album year is not 1984")
+#Album year is not 1984
+
+Quiz on Conditions
+rating = 8.5
+if rating > 8:
+    print ("This album is Amazing!")
+#This album is Amazing!
+
+rating = 8.5
+if rating > 8:
+    print ("this album is amazing")
+else:
+    print ("this album is ok")
+#this album is amazing
+
+album_year = 1979
+if album_year < 1980 or album_year == 1991 or album_year == 1993:
+    print ("this album came out already")
+#this album came out already
+
