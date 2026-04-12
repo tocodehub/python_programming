@@ -1,0 +1,142 @@
+# Exercise 7 (Loops)
+
+test=range(3)
+test
+#range(0, 3)
+test[1]
+#1
+
+dates = [1982,1980,1973] 
+N = len(dates) 
+
+for i in range(N): 
+    print(dates[i]) 
+#1982
+1980
+1973
+
+for i in range(0, 8): 
+    print("i is equal to", i)
+#i is equal to 0
+i is equal to 1
+i is equal to 2
+i is equal to 3
+i is equal to 4
+i is equal to 5
+i is equal to 6
+i is equal to 7
+
+for year in dates:   
+    print(year)
+#1982
+1980
+1973
+
+squares = ['red', 'yellow', 'green', 'purple', 'blue']
+
+for i in range(0, 5):
+    print("Before square ", i, 'is',  squares[i])
+    squares[i] = 'weight'
+    print("After square ", i, 'is',  squares[i])
+#Before square  0 is red
+After square  0 is weight
+Before square  1 is yellow
+After square  1 is weight
+Before square  2 is green
+After square  2 is weight
+Before square  3 is purple
+After square  3 is weight
+Before square  4 is blue
+After square  4 is weight
+
+squares = ['red', 'yellow', 'green', 'purple', 'blue']
+
+for i in squares:
+  print("Before square is: ", i)
+for i in range(0,5):
+  squares[i] = i* "what the heck!" 
+  print(squares[i])
+#Before square is:  red
+Before square is:  yellow
+Before square is:  green
+Before square is:  purple
+Before square is:  blue
+
+what the heck!
+what the heck!what the heck!
+what the heck!what the heck!what the heck!
+what the heck!what the heck!what the heck!what the heck!
+
+dates = [1982, 1980, 1973, 2000]
+
+i = 0
+year = 0
+
+while(year != 2000):
+    year = dates[i] #1982, 1980, 1973, 2000  
+    i = i + 1 #i =1, 2, 3, 4 
+    print(year) #1982, 1980, 1973, 2000  
+
+print("It took ", i ,"repetitions to get out of loop.")
+#1982
+1980
+1973
+2000
+It took  4 repetitions to get out of loop.
+
+Quiz on Loops
+for i in range(-5, 6):
+    print(i)
+#-5
+-4
+-3
+-2
+-1
+0
+1
+2
+3
+4
+5
+
+Genres=[ 'rock', 'R&B', 'Soundtrack', 'R&B', 'soul', 'pop']
+for i in Genres:
+  print(i)
+#rock
+R&B
+Soundtrack
+R&B
+soul
+pop
+
+squares=['red', 'yellow', 'green', 'purple', 'blue']
+for i in squares:
+  print(i)
+#red
+yellow
+green
+purple
+blue
+
+PlayListRatings = [10, 9.5, 10, 8, 7.5, 5, 10, 10]
+i = 1
+Rating = PlayListRatings[0]
+while(Rating >= 6):
+    print(Rating)
+    Rating = PlayListRatings[i]
+    i = i + 1
+#10
+9.5
+10
+8
+7.5
+
+squares = ['orange', 'orange', 'purple', 'blue ', 'orange']
+new_squares = []
+i = 0
+while(squares[i] == 'orange'):
+    new_squares.append(squares[i])
+    i = i + 1
+print (new_squares)
+#['orange', 'orange']
+
