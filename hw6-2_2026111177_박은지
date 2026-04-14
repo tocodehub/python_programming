@@ -1,0 +1,124 @@
+# Exercise 9 (Classes)
+
+import matplotlib.pyplot as plt
+
+class Rectangle:
+    
+    def __init__(self, width=2, height=3, color='r'):
+        self.width = width
+        self.height = height
+        self.color = color
+    
+    def drawRectangle(self):
+        plt.gca().add_patch(
+            plt.Rectangle((0, 0), self.width, self.height, fc=self.color)
+        )
+        plt.axis('scaled')
+        plt.show()
+
+SkinnyBlueRectangle = Rectangle(2, 10, 'blue')
+SkinnyBlueRectangle.drawRectangle
+
+FatYellowRectangle = Rectangle(20, 5, 'yellow')
+FatYellowRectangle.drawRectangle()
+ 
+SkinnyBlueRectangle.height 
+#10
+SkinnyBlueRectangle.width
+#2
+SkinnyBlueRectangle.color
+#blue
+FatYellowRectangle.height 
+#5
+FatYellowRectangle.width
+#20
+FatYellowRectangle.color
+#yellow
+
+class Circle(object):
+    
+    # Constructor
+    def __init__(self, radius, color='blue'):
+        self.radius = radius
+        self.color = color 
+    
+    # Method
+    def add_radius(self, r):
+        self.radius = self.radius + r
+        return(self.radius)
+    
+    # Method
+    def drawCircle(self):
+        plt.gca().add_patch(plt.Circle((0, 0), radius=self.radius, fc=self.color))
+        plt.axis('scaled')
+        plt.show()  
+
+RedCircle = Circle(0, 'red')
+RedCircle.radius
+RedCircle.add_radius(2)
+RedCircle.radius
+RedCircle.add_radius(2)
+RedCircle.radius
+RedCircle.add_radius(2)
+#6
+RedCircle = Circle(1, 'red')
+RedCircle.radius
+#1
+dir(RedCircle)
+#['__class__',
+ '__delattr__',
+ '__dict__',
+ '__dir__',
+ '__doc__',
+ '__eq__',
+ '__format__',
+ '__ge__',
+ '__getattribute__',
+ '__getstate__',
+ '__gt__',
+ '__hash__',
+ '__init__',
+ '__init_subclass__',
+ '__le__',
+ '__lt__',
+ '__module__',
+ '__ne__',
+ '__new__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__setattr__',
+ '__sizeof__',
+ '__str__',
+ '__subclasshook__',
+ '__weakref__',
+ 'add_radius',
+ 'color',
+ 'drawCircle',
+ 'radius']
+
+RedCircle.radius
+#1
+RedCircle.color
+#red
+RedCircle.radius = 12
+RedCircle.radius
+#12
+RedCircle.radius = 20
+RedCircle.drawCircle()
+
+print('Radius of object:',RedCircle.radius)
+RedCircle.add_radius(2)
+RedCircle.drawCircle()
+RedCircle.radius
+#Radius of object: 20
+(빨간원 그림)
+22
+
+BlueCircle = Circle(radius=100)
+BlueCircle.radius
+#100
+BlueCircle.color
+#blue
+
+사각형 그리는 것은 수업흐름을 따라 초반에 작성했습니다-!
