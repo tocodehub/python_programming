@@ -1,0 +1,270 @@
+# Exercise 8 (Functions)
+
+def add(a):
+    b = a + 1
+    print(a, "if you add one", b)
+    return(a, b)
+add(1)
+#1 if you add one 2
+(1, 2)
+
+return_value = add(2)
+return_value
+#2 if you add one 3
+(2, 3)
+
+help(add)
+#Help on function add in module __main__:
+add(a)
+
+add(10)
+#10 if you add one 11
+(10, 11)
+add(2)
+#2 if you add one 3
+(2, 3)
+
+
+def Mult(a, b):
+    c = a * b
+    return(c)
+
+result_mult = Mult(2.3, 3.1)
+type(result_mult)
+#float
+
+Mult(10.0, 3.14)
+#31.400000000000002
+
+Mult(2, "Michael Jackson ")
+#'Michael Jackson Michael Jackson '
+
+def square(a):
+    
+    # Local variable b
+    b = 1
+    c = a * a + b
+    print(a, "if you square + 1", c) 
+    return(c)
+x = 3
+y = square(x)
+y
+#3 if you square + 1 10
+10
+c
+#---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+/tmp/ipykernel_1482/3235490055.py in <cell line: 0>()
+----> 1 c
+
+NameError: name 'c' is not defined
+
+square(2)
+#2 if you square + 1 5
+5
+
+def MJ():
+    print('Michael Jackson')
+    
+def MJ1():
+    print('Michael Jackson')
+    return(None)
+
+MJ()
+#Michael Jackson
+MJ1()
+#Michael Jackson
+
+def con(a, b):
+    return(a + b)
+text_return = con("This ", "is")
+text_return
+#This is
+type(text_return)
+#str
+
+Block 1:
+a1 = 4
+b1 = 5
+c1 = a1 + b1 + 2 * a1 * b1 - 1
+if(c1 < 0):
+    c1 = 0 
+else:
+    c1 = 5
+c1   
+#5
+Block 2:
+a2 = 0
+b2 = 0
+c2 = a2 + b2 + 2 * a2 * b2 - 1
+if(c2 < 0):
+    c2 = 0 
+else:
+    c2 = 5
+c2   
+#0
+
+def Equation(a,b):
+    c = a + b + 2 * a * b - 1
+    if(c < 0):
+        c = 0 
+    else:
+        c = 5
+    return(c) 
+Equation(0,0)
+#0
+
+a1 = 4
+b1 = 5
+c1 = Equation(a1, b1)
+c1
+#5
+
+a2 = 0
+b2 = 0
+c2 = Equation(a2, b2)
+c2
+#0
+
+The print() function:
+album_ratings = [10.0, 8.5, 9.5, 7.0, 7.0, 9.5, 9.0, 9.5] 
+print(album_ratings)
+#[10.0, 8.5, 9.5, 7.0, 7.0, 9.5, 9.0, 9.5]
+
+sum(album_ratings)
+#70.0
+
+len(album_ratings)
+#8
+
+The return() function:
+ef type_of_album(artist, album, year_released):
+    
+    print(artist, album, year_released)
+    if year_released > 1980:
+        return "Modern"
+    else:
+        return "Oldie"
+    
+x = type_of_album("Michael Jackson", "Thriller", 1980)
+print(x)
+#Michael Jackson Thriller 1980
+Oldie
+type(x)
+#str
+
+def PrintList(the_list):
+    for element in the_list:
+        print(element)
+PrintList(['1', 1, 'the man', "abc"])
+#1
+1
+the man
+abc
+
+def isGoodRating(rating=4): 
+    if(rating < 7):
+        print("this album sucks it's rating is",rating)
+        
+    else:
+        print("this album is good its rating is",rating)
+isGoodRating()
+isGoodRating(10)
+#this album sucks it's rating is 4 #기본값이 4 - 디폴트값
+this album is good its rating is 10
+
+Global variables:
+artist = "Michael Jackson" #전역변수 = global...
+def printer1(artist):
+    internal_var = artist #local variable, 즉 printer1이 끝나면 없어지는 것임
+    print(artist, "is an artist")
+    
+printer1(artist, internal_var) #artist는 알아, internal_var 몰라...
+#---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+/tmp/ipykernel_1482/759001042.py in <cell line: 0>()
+      4     print(artist, "is an artist")
+      5 
+----> 6 printer1(artist, internal_var) #artist는 알아, internal_var 몰라...
+
+NameError: name 'internal_var' is not defined
+
+artist = "Michael Jackson" 
+
+def printer(artist):
+    global internal_var #일부러 internal_var이 전역이라는 것을 알려줄 수도 있다. --> 잘 안씀...
+    internal_var= "Whitney Houston"
+    print(artist,"is an artist")
+
+printer(artist) 
+printer(internal_var)
+#Michael Jackson is an artist
+Whitney Houston is an artist
+
+Scope of a Variable:
+myFavouriteBand = "AC/DC" #global 
+
+def getBandRating(bandname):
+    if bandname == myFavouriteBand:
+        return 10.0
+    else:
+        return 0.0
+
+print("AC/DC's rating is:", getBandRating("AC/DC"))
+print("Deep Purple's rating is:",getBandRating("Deep Purple"))
+print("My favourite band is:", myFavouriteBand)
+#AC/DC's rating is: 10.0
+Deep Purple's rating is: 0.0
+My favourite band is: AC/DC
+
+def getBandRating(bandname):
+    myFavouriteBand2 = "AC/DC" #local variable 
+    if bandname == myFavouriteBand2: 
+        return 10.0
+    else:
+        return 0.0
+
+print("AC/DC's rating is: ", getBandRating("AC/DC"))
+print("Deep Purple's rating is: ", getBandRating("Deep Purple"))
+print("My favourite band is", myFavouriteBand2)
+#AC/DC's rating is:  10.0
+Deep Purple's rating is:  0.0
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+/tmp/ipykernel_1482/403672388.py in <cell line: 0>()
+      8 print("AC/DC's rating is: ", getBandRating("AC/DC"))
+      9 print("Deep Purple's rating is: ", getBandRating("Deep Purple"))
+---> 10 print("My favourite band is", myFavouriteBand2)
+
+NameError: name 'myFavouriteBand2' is not defined
+
+myFavouriteBand = "AC/DC"
+
+def getBandRating(bandname):
+    myFavouriteBand = "Deep Purple"
+    if bandname == myFavouriteBand:
+        return 10.0
+    else:
+        return 0.0
+
+print("AC/DC's rating is:",getBandRating("AC/DC"))
+print("Deep Purple's rating is: ",getBandRating("Deep Purple"))
+print("My favourite band is:",myFavouriteBand)
+#AC/DC's rating is: 0.0
+Deep Purple's rating is:  10.0
+My favourite band is: AC/DC
+
+Quiz on Functions
+a function that divides the first input by the second input:
+def div(a, b):
+    return(a/b)
+Can the con function we defined before be used to add to integers or strings?
+def con(a, b):
+    return(a + b)
+con(2, 2)
+#4
+Can the con function we defined before be used to concentrate a list or tuple?
+con(['a', 1], ['b', 1])
+#['a', 1, 'b', 1]
+
+
