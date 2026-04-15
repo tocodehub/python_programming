@@ -1,0 +1,259 @@
+# Exercise 12 (LoadData(Pandas))
+
+import pandas as pd
+data = {'Name':['Tom', 'nick', 'krish', 'jack'],
+        'Age':[20, 21, 19, 18]}
+ 
+# Create DataFrame
+df = pd.DataFrame(data)
+ 
+# Print the output.
+print(df)
+#    Name  Age
+0    Tom   20
+1   nick   21
+2  krish   19
+3   jack   18
+
+from google.colab import drive
+drive.mount('/content/gdrive')
+#Mounted at /content/gdrive
+
+import pandas as pd
+csv_path = '/content/gdrive/MyDrive/TopSellingAlbums.csv'
+df = pd.read_csv(csv_path)
+df.tail()
+#Artist	Album	Released	Length	Genre	Music Recording Sales (millions)	Claimed Sales (millions)	Released.1	Soundtrack	Rating
+3	Whitney Houston	The Bodyguard	1992	0:57:44	R&B, soul, pop	27.4	44	17-Nov-92	Y	8.5
+4	Meat Loaf	Bat Out of Hell	1977	0:46:33	hard rock, progressive rock	20.6	43	21-Oct-77	NaN	8.0
+5	Eagles	Their Greatest Hits (1971-1975)	1976	0:43:08	rock, soft rock, folk rock	32.2	42	17-Feb-76	NaN	7.5
+6	Bee Gees	Saturday Night Fever	1977	1:15:54	disco	20.6	40	15-Nov-77	Y	7.0
+7	Fleetwood Mac	Rumours	1977	0:40:01	soft rock	27.9	40	04-Feb-77	NaN	6.5
+
+
+xlsx_path = '/content/gdrive/My Drive/TopSellingAlbums.xlsx'
+
+df1 = pd.read_excel(xlsx_path)
+df1.head()
+#Artist	Album	Released	Length	Genre	Music Recording Sales (millions)	Claimed Sales (millions)	Released.1	Soundtrack	Rating
+0	Michael Jackson	Thriller	1982	00:42:19	pop, rock, R&B	46.0	65	1982-11-30	NaN	10.0
+1	AC/DC	Back in Black	1980	0:42:11	hard rock	26.1	50	1980-07-25	NaN	9.5
+2	Pink Floyd	The Dark Side of the Moon	1973	0:42:49	progressive rock	24.2	45	1973-03-01	NaN	9.0
+3	Whitney Houston	The Bodyguard	1992	0:57:44	R&B, soul, pop	27.4	44	1992-11-17	Y	8.5
+4	Meat Loaf	Bat Out of Hell	1977	0:46:33	hard rock, progressive rock	20.6	43	1977-10-21	NaN	8.0
+
+x = df[['Genre']]
+x
+#Genre
+0	pop, rock, R&B
+1	hard rock
+2	progressive rock
+3	R&B, soul, pop
+4	hard rock, progressive rock
+5	rock, soft rock, folk rock
+6	disco
+7	soft rock
+
+x = df['Length']
+x
+#Length
+0:42:19
+0:42:11
+0:42:49
+0:57:44
+0:46:33
+0:43:08
+1:15:54
+0:40:01
+x = df[['Artist']]
+x
+#Artist
+0	Michael Jackson
+1	AC/DC
+2	Pink Floyd
+3	Whitney Houston
+4	Meat Loaf
+5	Eagles
+6	Bee Gees
+7	Fleetwood Mac
+
+y = df[['Artist','Length','Genre']]
+y
+Artist	Length	Genre
+0	Michael Jackson	0:42:19	pop, rock, R&B
+1	AC/DC	0:42:11	hard rock
+2	Pink Floyd	0:42:49	progressive rock
+3	Whitney Houston	0:57:44	R&B, soul, pop
+4	Meat Loaf	0:46:33	hard rock, progressive rock
+5	Eagles	0:43:08	rock, soft rock, folk rock
+6	Bee Gees	1:15:54	disco
+7	Fleetwood Mac	0:40:01	soft rock
+
+df.iloc[0, 0]
+#Michael Jackson
+df.iloc[1,0]
+#AC/DC
+df.iloc[0,2]
+#1982
+df.loc[0, 'Artist']
+#Michael Jackson
+df.loc[1, 'Artist']
+#AC/DC
+df.loc[0, 'Released']
+#1982
+df.loc[1, 'Released']
+#1980
+df.iloc[0:2, 0:3]
+#Artist	Album	Released
+0	Michael Jackson	Thriller	1982
+1	AC/DC	Back in Black	1980
+df.loc[0:2, 'Artist':'Released']
+#Artist	Album	Released
+0	Michael Jackson	Thriller	1982
+1	AC/DC	Back in Black	1980
+2	Pink Floyd	The Dark Side of the Moon	1973
+
+for i, j in df.iterrows():
+    print(i, j)
+    print()
+#0 Artist                              Michael Jackson
+Album                                      Thriller
+Released                                       1982
+Length                                      0:42:19
+Genre                                pop, rock, R&B
+Music Recording Sales (millions)               46.0
+Claimed Sales (millions)                         65
+Released.1                                30-Nov-82
+Soundtrack                                      NaN
+Rating                                         10.0
+Name: 0, dtype: object
+
+1 Artist                                      AC/DC
+Album                               Back in Black
+Released                                     1980
+Length                                    0:42:11
+Genre                                   hard rock
+Music Recording Sales (millions)             26.1
+Claimed Sales (millions)                       50
+Released.1                              25-Jul-80
+Soundtrack                                    NaN
+Rating                                        9.5
+Name: 1, dtype: object
+
+2 Artist                                             Pink Floyd
+Album                               The Dark Side of the Moon
+Released                                                 1973
+Length                                                0:42:49
+Genre                                        progressive rock
+Music Recording Sales (millions)                         24.2
+Claimed Sales (millions)                                   45
+Released.1                                          01-Mar-73
+Soundtrack                                                NaN
+Rating                                                    9.0
+Name: 2, dtype: object
+
+3 Artist                              Whitney Houston
+Album                                 The Bodyguard
+Released                                       1992
+Length                                      0:57:44
+Genre                                R&B, soul, pop
+Music Recording Sales (millions)               27.4
+Claimed Sales (millions)                         44
+Released.1                                17-Nov-92
+Soundtrack                                        Y
+Rating                                          8.5
+Name: 3, dtype: object
+
+4 Artist                                                Meat Loaf
+Album                                           Bat Out of Hell
+Released                                                   1977
+Length                                                  0:46:33
+Genre                               hard rock, progressive rock
+Music Recording Sales (millions)                           20.6
+Claimed Sales (millions)                                     43
+Released.1                                            21-Oct-77
+Soundtrack                                                  NaN
+Rating                                                      8.0
+Name: 4, dtype: object
+
+5 Artist                                                       Eagles
+Album                               Their Greatest Hits (1971-1975)
+Released                                                       1976
+Length                                                      0:43:08
+Genre                                    rock, soft rock, folk rock
+Music Recording Sales (millions)                               32.2
+Claimed Sales (millions)                                         42
+Released.1                                                17-Feb-76
+Soundtrack                                                      NaN
+Rating                                                          7.5
+Name: 5, dtype: object
+
+6 Artist                                          Bee Gees
+Album                               Saturday Night Fever
+Released                                            1977
+Length                                           1:15:54
+Genre                                              disco
+Music Recording Sales (millions)                    20.6
+Claimed Sales (millions)                              40
+Released.1                                     15-Nov-77
+Soundtrack                                             Y
+Rating                                               7.0
+Name: 6, dtype: object
+
+7 Artist                              Fleetwood Mac
+Album                                     Rumours
+Released                                     1977
+Length                                    0:40:01
+Genre                                   soft rock
+Music Recording Sales (millions)             27.9
+Claimed Sales (millions)                       40
+Released.1                              04-Feb-77
+Soundtrack                                    NaN
+Rating                                        6.5
+Name: 7, dtype: object
+
+filter2 = df["Claimed Sales (millions)"]>40
+df.where(filter2)
+#index,Artist,Album,Released,Length,Genre,Music Recording Sales (millions),Claimed Sales (millions),Released.1,Soundtrack,Rating
+0,Michael Jackson,Thriller,1982.0,0:42:19,"pop, rock, R&B",46.0,65.0,30-Nov-82,NaN,10.0
+1,AC/DC,Back in Black,1980.0,0:42:11,hard rock,26.1,50.0,25-Jul-80,NaN,9.5
+2,Pink Floyd,The Dark Side of the Moon,1973.0,0:42:49,progressive rock,24.2,45.0,01-Mar-73,NaN,9.0
+3,Whitney Houston,The Bodyguard,1992.0,0:57:44,"R&B, soul, pop",27.4,44.0,17-Nov-92,Y,8.5
+4,Meat Loaf,Bat Out of Hell,1977.0,0:46:33,"hard rock, progressive rock",20.6,43.0,21-Oct-77,NaN,8.0
+5,Eagles,Their Greatest Hits (1971-1975),1976.0,0:43:08,"rock, soft rock, folk rock",32.2,42.0,17-Feb-76,NaN,7.5
+6,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+7,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN
+
+Quiz on DataFrame
+Use a variable q to store the column Rating as a dataframe:
+q = df[['Rating']]
+q
+#Rating
+0	10.0
+1	9.5
+2	9.0
+3	8.5
+4	8.0
+5	7.5
+6	7.0
+7	6.5
+
+Assign the variable q to the dataframe that is made up of the column Released and Artist:
+q = df[['Released', 'Artist']]
+q
+#Released	Artist
+0	1982	Michael Jackson
+1	1980	AC/DC
+2	1973	Pink Floyd
+3	1992	Whitney Houston
+4	1977	Meat Loaf
+5	1976	Eagles
+6	1977	Bee Gees
+7	1977	Fleetwood Mac
+
+Access the 2nd row and the 3rd column of df:
+df.iloc[1, 2]
+#np.int64(1980
+값 변환
+print(df.iloc[1, 2])
+#1980
